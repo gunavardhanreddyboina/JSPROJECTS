@@ -8,71 +8,103 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #74ebd5, #ACB6E5);
       margin: 0;
-      padding: 0;
+      padding: 40px 20px;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
     }
 
     h1 {
       color: #fff;
-      font-size: 2.5rem;
-      margin-bottom: 30px;
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 40px;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    li {
+    .card {
       background: #fff;
       border-radius: 12px;
+      padding: 30px 20px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.2);
       transition: transform 0.2s, box-shadow 0.2s;
+      text-align: center;
     }
 
-    li:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     }
 
-    a {
-      display: block;
-      padding: 20px 40px;
-      text-decoration: none;
+    .card h2 {
+      margin: 15px 0 10px;
+      font-size: 1.4rem;
       color: #333;
-      font-size: 1.2rem;
-      font-weight: 600;
     }
 
-    a:hover {
-      color: #007acc;
+    .card p {
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      margin-bottom: 20px;
     }
 
-    @media (max-width: 600px) {
-      a {
-        padding: 15px 30px;
-        font-size: 1rem;
-      }
+    .card a {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #007acc;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+
+    .card a:hover {
+      background: #005fa3;
+    }
+
+    .icon {
+      font-size: 40px;
     }
   </style>
+  <!-- Include icons from a CDN -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <h1>🚀 My JavaScript Mini Projects</h1>
-  <ul>
-    <li><a href="jsprojects/CounterApp/">Counter App</a></li>
-    <li><a href="jsprojects/DigitalClock/">Digital Clock</a></li>
-    <li><a href="jsprojects/ColorChangerApp/">Color Changer App</a></li>
-    <li><a href="jsprojects/ImageSlider/">Image Slider</a></li>
-    <!-- Add more as you build them -->
-  </ul>
+  <div class="projects">
+    <div class="card">
+      <div class="icon"><i class="fas fa-plus"></i></div>
+      <h2>Counter App</h2>
+      <p>Simple app to increase, decrease, or reset a counter. Great for learning DOM manipulation and event handling.</p>
+      <a href="jsprojects/CounterApp/">View Project</a>
+    </div>
+    <div class="card">
+      <div class="icon"><i class="far fa-clock"></i></div>
+      <h2>Digital Clock</h2>
+      <p>Live digital clock displaying current time. Updates every second using JavaScript's Date and setInterval.</p>
+      <a href="jsprojects/DigitalClock/">View Project</a>
+    </div>
+    <div class="card">
+      <div class="icon"><i class="fas fa-palette"></i></div>
+      <h2>Color Changer App</h2>
+      <p>Click to change the background color randomly. Learn about event listeners and manipulating CSS with JS.</p>
+      <a href="jsprojects/ColorChangerApp/">View Project</a>
+    </div>
+    <div class="card">
+      <div class="icon"><i class="fas fa-images"></i></div>
+      <h2>Image Slider</h2>
+      <p>Automatically slide through images or navigate manually. Practice working with arrays and timing functions.</p>
+      <a href="jsprojects/ImageSlider/">View Project</a>
+    </div>
+    <!-- Add more cards as you build more projects -->
+  </div>
 </body>
 </html>
